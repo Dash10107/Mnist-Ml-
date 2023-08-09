@@ -8,8 +8,8 @@ from flask_ngrok import run_with_ngrok
 from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
-run_with_ngrok(app)
 
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 model = tf.keras.models.load_model('mnist_model.h5')
 
@@ -45,4 +45,4 @@ def hello():
     return 'Hello from server!'
 
 if __name__ == '__main__':
-   app.run()
+     app.run(host='0.0.0.0', port=5000) 
