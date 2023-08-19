@@ -8,7 +8,7 @@ from flask_ngrok import run_with_ngrok
 from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
-
+CORS(app, resources={r"/*": {"origins": ["http://localhost:3000", "https://fancy-biscochitos-85620f.netlify.app"]}})
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 model = tf.keras.models.load_model('mnist_model.h5')
