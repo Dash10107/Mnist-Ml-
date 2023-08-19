@@ -7,7 +7,7 @@ import tensorflow as tf
 from flask_ngrok import run_with_ngrok
 from flask_cors import CORS
 app = Flask(__name__)
-CORS(app)
+
 CORS(app, origins="*")
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
